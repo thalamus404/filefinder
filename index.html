@@ -10,14 +10,27 @@
   
   <script>
     var database = {
-        "Pouch Cell Assembly": {
-          1: ["GX010050.MP4", "GX010051.MP4", "GX10052.MP4", "GX010058.MP4", "GX010059.MP4", "GX020050.MP4", "GX020051.MP4", "GX030050.MP4", "GX030051.MP4"],
-          2: ["GH010034.MP4", "GH020034.MP4", "GH030034.MP4", "GX010053.MP4", "GX010054.MP4", "GX020054.MP4"],
-          3: ["GH010068.MP4", "GH020068.MP4", "GH030068.MP4", "GX010055.MP4", "GX010057.MP4", "GX020057.MP4", "GX030057.MP4"],
-          4: ["GH010069.MP4", "GH020069.MP4", "GH030069.MP4"]
-        },
-        // ... other categories structured the same way
-      };
+      "Pouch Cell Assembly": {
+        1: ["GX010050.MP4", "GX010051.MP4", "GX10052.MP4", "GX010058.MP4", "GX010059.MP4", "GX020050.MP4", "GX020051.MP4", "GX030050.MP4", "GX030051.MP4"],
+        2: ["GH010034.MP4", "GH020034.MP4", "GH030034.MP4", "GX010053.MP4", "GX010054.MP4", "GX020054.MP4"],
+        3: ["GH010068.MP4", "GH020068.MP4", "GH030068.MP4", "GX010055.MP4", "GX010057.MP4", "GX020057.MP4", "GX030057.MP4"],
+        4: ["GH010069.MP4", "GH020069.MP4", "GH030069.MP4"]
+      },
+      "2170 cell dissection": {
+        1: ["GX010053.MP4", "GX010054.MP4", "GX020053.MP4", "GX020054.MP4", "GX030053.MP4", "GX030054.MP4"],
+        2: ["GH010035.MP4", "GH010036.MP4", "GH020035.MP4", "GH020036.MP4", "GH030035.MP4", "GH030036.MP4"],
+        3: ["GH010060.MP4", "GH010061.MP4", "GH020060.MP4", "GH020061.MP4", "GH030060.MP4", "GH030061.MP4", "GH040060.MP4", "GH040061.MP4"],
+        4: [] // No data for column 4 in the '2170 cell dissection' category
+      },
+      "Peel + Hioki": {
+        1: ["GX010055.MP4", "GX010056.MP4"],
+        2: ["GH010038.MP4", "GH010039.MP4"],
+        3: ["GH010062.MP4", "GX010063.MP4"],
+        4: [] // No data for column 4 in the 'Peel + Hioki' category
+      }
+      // ... add more categories if needed
+    };
+    
       
       // Function to search the database based on the inputted filename
       function searchDatabase(filename) {
