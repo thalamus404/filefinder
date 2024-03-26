@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>GoPro File Organizer</title>
+</head>
+<body>
+  <input type="text" id="filenameInput" placeholder="Enter file name">
+  <button onclick="handleSubmit()">Submit</button>
+  <p id="resultOutput"></p>
+  
+  <script>
+    var database = {
+        "Pouch Cell Assembly": {
+          1: ["GX010050.MP4", "GX010051.MP4", "GX10052.MP4", "GX010058.MP4", "GX010059.MP4", "GX020050.MP4", "GX020051.MP4", "GX030050.MP4", "GX030051.MP4"],
+          2: ["GH010034.MP4", "GH020034.MP4", "GH030034.MP4", "GX010053.MP4", "GX010054.MP4", "GX020054.MP4"],
+          3: ["GH010068.MP4", "GH020068.MP4", "GH030068.MP4", "GX010055.MP4", "GX010057.MP4", "GX020057.MP4", "GX030057.MP4"],
+          4: ["GH010069.MP4", "GH020069.MP4", "GH030069.MP4"]
+        },
+        // ... other categories structured the same way
+      };
+      
+      // Function to search the database based on the inputted filename
+      function searchDatabase(filename) {
+        let found = false;
+        for (let category in database) {
+          for (let column in database[category]) {
+            if (database[category][column].includes(filename)) {
+              found = true;
+              return `Project: ${category}, Camera ${column}.`;
+            }
+          }
+        }
+        if (!found) {
+          return "File not found in the database.";
+        }
+      }
+      
+      // Function to handle the form submission
+      function handleSubmit() {
+        var filename = document.getElementById("filenameInput").value;
+        var result = searchDatabase(filename);
+        document.getElementById("resultOutput").innerText = result;
+      }
+  </script>
+</body>
+</html>
